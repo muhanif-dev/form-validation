@@ -39,7 +39,11 @@ const App = () => {
         errors.email = "Invalid email address";
       }
 
-      if (!values.phone) errors.phone = "Phone is required";
+    if (!values.phone) {
+        errors.phone = "Phone is required";
+      } else if (!/^\+?[0-9]+$/.test(values.phone)) {
+        errors.phone = "Only numbers and '+' sign are allowed";
+      }
       if (!values.gender) errors.gender = "Gender is required";
 
       if (!values.age) errors.age = "Age is required";
