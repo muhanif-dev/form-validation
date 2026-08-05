@@ -63,7 +63,7 @@ const App = () => {
       return errors;
     },
 
-    n: (values, { resetForm }) => {
+    onSubmit: (values, { resetForm }) => {
       // 1. Naye user ko purane array ke sath milana
       const updatedUsers = [...users, { ...values, id: Date.now() }];
       // 2. State ko update karna
